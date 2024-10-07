@@ -1,5 +1,4 @@
-from hashlib import sha256
-from sha3 import keccak_256
+from hashlib import sha3_256
 from time import time
 
 def find_string_with_hash_starting_with_zero():
@@ -8,7 +7,7 @@ def find_string_with_hash_starting_with_zero():
 
     while True:
         string_to_test = base + str(ctr) # append number
-        sha = sha256(string_to_test.encode("utf-8")).hexdigest()
+        sha = sha3_256(string_to_test.encode("utf-8")).hexdigest()
         if sha.startswith("0"):
             print(f"String: \"{string_to_test}\"")
             print(f"Hash: {sha.upper()}")

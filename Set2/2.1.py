@@ -1,4 +1,4 @@
-from hashlib import sha256
+from hashlib import sha3_256
 from sha3 import keccak_256
 
 ## Problem 2.1 (a) ##
@@ -14,6 +14,6 @@ strings = (
 )
 
 for idx, string in enumerate(strings):
-    sha = sha256() # create SHA256 object
+    sha = sha3_256() # create SHA256 object
     sha.update(string.encode('utf-8')) # set string
     print(f"2.1 (b) {idx + 1}: {sha.hexdigest()}")
